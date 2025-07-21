@@ -1,11 +1,11 @@
 let isShift = false;
-let currentLayout = "letters"; // letters, symbols, emojis
+let currentLayout = "letters"; // Can be: letters, symbols, emojis
 
 function typeKey(char) {
   const textarea = document.querySelector("textarea");
   if (textarea) {
     const finalChar = isShift ? char.toUpperCase() : char;
-    textarea.value += char === '\n' ? '\n' : finalChar;
+    textarea.value += finalChar;
     textarea.focus();
   }
 }
@@ -30,7 +30,26 @@ function updateShiftKey() {
   }
 }
 
-// Cycle: 🌐 switches layout → symbols → emojis → letters...
+function switchToLayout(layout) {
+  const letters = document.getElementById("layout-letters");
+  const symbols = document.getElementById("layout-symbols");
+  const emojis = document.getElementById("layout-emojis");
+
+  // Hide all
+  letters.classList.add("hidden");
+  symbols.classList.add("hidden");
+  emojis.classList.add("hidden");
+
+  // Show only the selected
+  if (layout === "letters") letters.classList.remove("hidden");
+  else if (layout === "symbols") symbols.classList.remove("hidden");
+  else if (layout === "emojis") emojis.classList.remove("hidden");
+
+  currentLayout = layout;
+  isShift = false;
+  updateShiftKey();
+}
+
 function cycleLayout() {
   if (currentLayout === "letters") {
     switchToLayout("symbols");
