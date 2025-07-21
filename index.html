@@ -58,22 +58,59 @@
     </div>
 
     <!-- Symbols Layout -->
-    <div id="layout-symbols" class="hidden">
-      <div class="row">
-        <div class="key" onmousedown="typeKey('1')" ontouchstart="typeKey('1')">1</div>
-        <div class="key" onmousedown="typeKey('2')" ontouchstart="typeKey('2')">2</div>
-        <div class="key" onmousedown="typeKey('3')" ontouchstart="typeKey('3')">3</div>
-        <div class="key" onmousedown="typeKey('4')" ontouchstart="typeKey('4')">4</div>
-        <div class="key" onmousedown="typeKey('5')" ontouchstart="typeKey('5')">5</div>
-      </div>
-      <div class="row">
-        <div class="key" onmousedown="typeKey('@')" ontouchstart="typeKey('@')">@</div>
-        <div class="key" onmousedown="typeKey('#')" ontouchstart="typeKey('#')">#</div>
-        <div class="key" onmousedown="typeKey('!')" ontouchstart="typeKey('!')">!</div>
-        <div class="key" onmousedown="typeKey('%')" ontouchstart="typeKey('%')">%</div>
-        <div class="key" onmousedown="switchLayout()" ontouchstart="switchLayout()">ABC ↑</div>
-      </div>
-    </div>
+<div id="layout-symbols" class="hidden">
+  <!-- Row 1 -->
+  <div class="row">
+    <div class="key" onclick="typeKey('1')">1</div>
+    <div class="key" onclick="typeKey('2')">2</div>
+    <div class="key" onclick="typeKey('3')">3</div>
+    <div class="key" onclick="typeKey('4')">4</div>
+    <div class="key" onclick="typeKey('5')">5</div>
+    <div class="key" onclick="typeKey('6')">6</div>
+    <div class="key" onclick="typeKey('7')">7</div>
+    <div class="key" onclick="typeKey('8')">8</div>
+    <div class="key" onclick="typeKey('9')">9</div>
+    <div class="key" onclick="typeKey('0')">0</div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="row">
+    <div class="key" onclick="typeKey('!')">!</div>
+    <div class="key" onclick="typeKey('@')">@</div>
+    <div class="key" onclick="typeKey('#')">#</div>
+    <div class="key" onclick="typeKey('$')">$</div>
+    <div class="key" onclick="typeKey('%')">%</div>
+    <div class="key" onclick="typeKey('^')">^</div>
+    <div class="key" onclick="typeKey('&')">&</div>
+    <div class="key" onclick="typeKey('*')">*</div>
+    <div class="key" onclick="typeKey('(')">(</div>
+    <div class="key" onclick="typeKey(')')">)</div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="row">
+    <div class="key" onclick="typeKey('-')">-</div>
+    <div class="key" onclick="typeKey('_')">_</div>
+    <div class="key" onclick="typeKey('=')">=</div>
+    <div class="key" onclick="typeKey('+')">+</div>
+    <div class="key" onclick="typeKey('/')">/</div>
+    <div class="key" onclick="typeKey('\\')">\</div>
+    <div class="key" onclick="typeKey(':')">:</div>
+    <div class="key" onclick="typeKey(';')">;</div>
+    <div class="key" onclick="typeKey('"')">"</div>
+    <div class="key backspace" onclick="backspace()">⌫</div>
+  </div>
+
+  <!-- Row 4 -->
+  <div class="row">
+    <div class="key" onclick="switchLayout()">ABC ↑</div>
+    <div class="key" onclick="typeKey(',')">,</div>
+    <div class="key" onclick="typeKey('?')">?</div>
+    <div class="key space" onclick="typeKey(' ')">Space</div>
+    <div class="key" onclick="typeKey('.')">.</div>
+    <div class="key" onclick="typeKey('\n')">⏎</div>
+  </div>
+</div>
   </div>
 </body>
 </html>
