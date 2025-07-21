@@ -1,4 +1,5 @@
 let isShift = false;
+let currentLayout = "letters"; // letters, symbols, emojis
 
 function typeKey(char) {
   const textarea = document.querySelector("textarea");
@@ -21,33 +22,6 @@ function backspace() {
   }
 }
 
-function switchLayout() {
-  const letters = document.getElementById("layout-letters");
-  const symbols = document.getElementById("layout-symbols");
-  const emojis = document.getElementById("layout-emojis");
-  
-  // Toggle visibility
-  letters.classList.toggle("hidden");
-  symbols.classList.toggle("hidden");
-
-  // Hide emojis if open
-  if (emojis) emojis.classList.add("hidden");
-
-  // Reset shift if needed
-  isShift = false;
-  updateShiftKey();
-}
-
-function toggleEmojiLayout() {
-  const emojis = document.getElementById("layout-emojis");
-  const letters = document.getElementById("layout-letters");
-  const symbols = document.getElementById("layout-symbols");
-
-  emojis.classList.toggle("hidden");
-  letters.classList.add("hidden");
-  symbols.classList.add("hidden");
-}
-
 function toggleShift() {
   isShift = !isShift;
   updateShiftKey();
@@ -58,4 +32,30 @@ function updateShiftKey() {
   if (shiftKey) {
     shiftKey.classList.toggle("active", isShift);
   }
+}
+
+// Cycle between layouts: Letters → Symbols → Emojis → Letters ...
+function cycleLayout() {
+  const letters = document.getElementById("layout-letters");
+  const symbols = document.getElementById("layout-symbols");
+  const emojis = document.getElementById("layout-emojis");
+
+  letters.classList.add("hidden");
+  symbols.classList.add("hidden");
+  emojis.classList.add("hidden");
+
+  if (currentLayout === "letters") {
+    symbols.classList.remove("hidden");
+    currentLayout = "symbols";
+  } else if (currentLayout === "symbols") {
+    emojis.classList.remove("hidden");
+    currentLayout = "emojis";
+  } else {
+    letters.classList.remove("hidden");
+    currentLayout = "letters";
+  }
+
+  // Reset shift when layout changes
+  isShift = false;
+  updateShiftKey();
 }
