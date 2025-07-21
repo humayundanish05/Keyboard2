@@ -2,15 +2,10 @@ let isShift = false;
 let currentLayout = "letters"; // letters, symbols, emojis
 
 function typeKey(char) {
-  // Prevent double firing on mobile
-  if (window.event && window.event.type === "touchstart") {
-    window.event.preventDefault();
-  }
-
   const textarea = document.querySelector("textarea");
   if (textarea) {
-    const finalChar = (char === '\n') ? '\n' : (isShift ? char.toUpperCase() : char);
-    textarea.value += finalChar;
+    const finalChar = isShift ? char.toUpperCase() : char;
+    textarea.value += char === '\n' ? '\n' : finalChar;
     textarea.focus();
   }
 }
@@ -35,7 +30,7 @@ function updateShiftKey() {
   }
 }
 
-// Cycle: letters → symbols → emojis → letters
+// Cycle: 🌐 switches layout → symbols → emojis → letters...
 function cycleLayout() {
   if (currentLayout === "letters") {
     switchToLayout("symbols");
@@ -46,22 +41,15 @@ function cycleLayout() {
   }
 }
 
-function switchToLayout(layoutName) {
-  const layouts = ["letters", "symbols", "emojis"];
+// Use this in layout switch keys like "ABC ↑", "#" or "ABC"
+function switchToLayout(layout) {
+  document.getElementById("layout-letters").classList.add("hidden");
+  document.getElementById("layout-symbols").classList.add("hidden");
+  document.getElementById("layout-emojis").classList.add("hidden");
 
-  layouts.forEach(layout => {
-    const el = document.getElementById("layout-" + layout);
-    if (el) {
-      if (layout === layoutName) {
-        el.classList.remove("hidden");
-        currentLayout = layoutName;
-      } else {
-        el.classList.add("hidden");
-      }
-    }
-  });
+  document.getElementById(`layout-${layout}`).classList.remove("hidden");
+  currentLayout = layout;
 
-  // Reset shift when layout changes
   isShift = false;
   updateShiftKey();
 }
