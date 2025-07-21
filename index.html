@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Keyboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="keyboard-container">
+    <!-- Letters Layout -->
+    <div id="layout-letters">
+      <div class="row">
+        <div class="key" onmousedown="typeKey('Q')" ontouchstart="typeKey('Q')">Q</div>
+        <div class="key" onmousedown="typeKey('W')" ontouchstart="typeKey('W')">W</div>
+        <div class="key" onmousedown="typeKey('E')" ontouchstart="typeKey('E')">E</div>
+        <div class="key" onmousedown="typeKey('R')" ontouchstart="typeKey('R')">R</div>
+        <div class="key" onmousedown="typeKey('T')" ontouchstart="typeKey('T')">T</div>
+        <div class="key" onmousedown="typeKey('Y')" ontouchstart="typeKey('Y')">Y</div>
+        <div class="key" onmousedown="typeKey('U')" ontouchstart="typeKey('U')">U</div>
+        <div class="key" onmousedown="typeKey('I')" ontouchstart="typeKey('I')">I</div>
+        <div class="key" onmousedown="typeKey('O')" ontouchstart="typeKey('O')">O</div>
+        <div class="key" onmousedown="typeKey('P')" ontouchstart="typeKey('P')">P</div>
+      </div>
+      <div class="row">
+        <div class="key" onmousedown="typeKey('A')" ontouchstart="typeKey('A')">A</div>
+        <div class="key" onmousedown="typeKey('S')" ontouchstart="typeKey('S')">S</div>
+        <div class="key" onmousedown="typeKey('D')" ontouchstart="typeKey('D')">D</div>
+        <div class="key" onmousedown="typeKey('F')" ontouchstart="typeKey('F')">F</div>
+        <div class="key" onmousedown="typeKey('G')" ontouchstart="typeKey('G')">G</div>
+        <div class="key" onmousedown="typeKey('H')" ontouchstart="typeKey('H')">H</div>
+        <div class="key" onmousedown="typeKey('J')" ontouchstart="typeKey('J')">J</div>
+        <div class="key" onmousedown="typeKey('K')" ontouchstart="typeKey('K')">K</div>
+        <div class="key" onmousedown="typeKey('L')" ontouchstart="typeKey('L')">L</div>
+      </div>
+      <div class="row">
+        <div class="key" onmousedown="typeKey('Z')" ontouchstart="typeKey('Z')">Z</div>
+        <div class="key" onmousedown="typeKey('X')" ontouchstart="typeKey('X')">X</div>
+        <div class="key" onmousedown="typeKey('C')" ontouchstart="typeKey('C')">C</div>
+        <div class="key" onmousedown="typeKey('V')" ontouchstart="typeKey('V')">V</div>
+        <div class="key" onmousedown="typeKey('B')" ontouchstart="typeKey('B')">B</div>
+        <div class="key" onmousedown="typeKey('N')" ontouchstart="typeKey('N')">N</div>
+        <div class="key" onmousedown="typeKey('M')" ontouchstart="typeKey('M')">M</div>
+        <div class="key backspace" onmousedown="backspace()" ontouchstart="backspace()">⌫</div>
+      </div>
+      <div class="row">
+        <div class="key" onmousedown="switchLayout()" ontouchstart="switchLayout()">123 ↓</div>
+        <div class="key" onmousedown="typeKey(',')" ontouchstart="typeKey(',')">,</div>
+        <div class="key" onmousedown="typeKey('?')" ontouchstart="typeKey('?')">?</div>
+        <div class="key space" onmousedown="typeKey(' ')" ontouchstart="typeKey(' ')">Space</div>
+        <div class="key" onmousedown="typeKey('.')" ontouchstart="typeKey('.')">.</div>
+        <div class="key" onmousedown="typeKey('\n')" ontouchstart="typeKey('\n')">⏎</div>
+      </div>
+    </div>
+
+    <!-- Symbols Layout -->
+    <div id="layout-symbols" class="hidden">
+      <div class="row">
+        <div class="key" onmousedown="typeKey('1')" ontouchstart="typeKey('1')">1</div>
+        <div class="key" onmousedown="typeKey('2')" ontouchstart="typeKey('2')">2</div>
+        <div class="key" onmousedown="typeKey('3')" ontouchstart="typeKey('3')">3</div>
+        <div class="key" onmousedown="typeKey('4')" ontouchstart="typeKey('4')">4</div>
+        <div class="key" onmousedown="typeKey('5')" ontouchstart="typeKey('5')">5</div>
+      </div>
+      <div class="row">
+        <div class="key" onmousedown="typeKey('@')" ontouchstart="typeKey('@')">@</div>
+        <div class="key" onmousedown="typeKey('#')" ontouchstart="typeKey('#')">#</div>
+        <div class="key" onmousedown="typeKey('!')" ontouchstart="typeKey('!')">!</div>
+        <div class="key" onmousedown="typeKey('%')" ontouchstart="typeKey('%')">%</div>
+        <div class="key" onmousedown="switchLayout()" ontouchstart="switchLayout()">ABC ↑</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
